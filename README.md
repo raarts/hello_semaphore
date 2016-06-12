@@ -4,12 +4,11 @@ To start your **Dockerized** Phoenix app:
 
   1. Install dependencies with `mix deps.get`
   1. Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  1. Compile and build a release with `MIX_ENV=prod mix compile && mix release`
-  1. Start Phoenix endpoint with `mix phoenix.server`
+  1. Compile in preparation for a release with `MIX_ENV=prod mix compile`i
+  1. Build a release with `MIX_ENV=prod mix release`
+  1. Start Phoenix endpoint with `PORT=8888 rel/hello_semaphore/bin/hello_semaphore console`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+Now you can visit [`localhost:8888`](http://localhost:8888) from your browser.
 
 ## Learn more
 
