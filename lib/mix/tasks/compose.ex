@@ -13,12 +13,12 @@ defmodule Mix.Tasks.Compose do
 
   def compose(["up"]) do
     Mix.shell.info "Start time!"
-    Mix.shell.cmd("sudo docker-compose up")
+    Mix.shell.cmd("sudo -E docker-compose up")
   end
 
   def compose(["down"]) do
     Mix.shell.info "Stop time!"
-    Mix.shell.cmd("sudo docker-compose down")
+    Mix.shell.cmd("sudo -E docker-compose down")
   end
 
   def compose(["release", env]) do
@@ -31,7 +31,7 @@ defmodule Mix.Tasks.Compose do
   def compose(["build"]) do
     version = Keyword.fetch!(Mix.Project.config, :version)
     Mix.shell.info "Version: #{version}"
-    Mix.shell.cmd "sudo docker build -t hellosemaphore_web --build-arg VERSION=#{version} ."
+    Mix.shell.cmd "sudo -E VERSION=#{version} docker-compose build"
   end 
 
 end
