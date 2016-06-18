@@ -12,20 +12,18 @@ defmodule Mix.Tasks.Compose do
   end
 
   def compose(["up"]) do
-    Mix.shell.info "Start time!"
     Mix.shell.cmd("sudo -E docker-compose up")
   end
 
   def compose(["down"]) do
-    Mix.shell.info "Stop time!"
     Mix.shell.cmd("sudo -E docker-compose down")
   end
 
   def compose(["release", env]) do
-    Mix.shell.info "Release and start time!"
     System.put_env("MIX_ENV", env)
     Mix.shell.cmd "mix compile"
     Mix.shell.cmd "mix release"
+    Mix.shell.cmd "mix compose build"
   end
 
   def compose(["build"]) do
