@@ -9,5 +9,9 @@ services:
       - "8888:8888"
     depends_on:
      - postgres
+    entrypoint: ./wait-for-postgres.sh postgres /app/bin/hello_semaphore foreground
+
   postgres:
     image: postgres
+    volumes:
+      - ./data:/var/lib/postgresql/data
