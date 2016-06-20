@@ -3,12 +3,10 @@
 To start your **Dockerized** Phoenix app:
 
   1. Install dependencies with `mix deps.get`
-  1. Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  1. Compile in preparation for a release with `MIX_ENV=prod mix compile`i
-  1. Build a release with `MIX_ENV=prod mix release`
-  1. Start Phoenix endpoint with `PORT=8888 rel/hello_semaphore/bin/hello_semaphore console`
+  1. Compile, build a release, and build a Docker Compose setup with `mix compose release prod`
+  1. Start hello_semaphore and PostgreSQL with `mix compose up`
 
-Now you can visit [`localhost:8888`](http://localhost:8888) from your browser.
+Now you can visit [`localhost:8888/users`](http://localhost:8888/users) from your browser!
 
 ## Learn more
 
