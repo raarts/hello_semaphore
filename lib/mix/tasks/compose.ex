@@ -1,7 +1,7 @@
 defmodule Mix.Tasks.Compose do
   use Mix.Task
 
-  @shortdoc "Run Docker Compose to start up an orchestrated multi-container runtime of this project"
+  @shortdoc "Run Docker Compose to start up an orchestrated multi-container runtime of this project. Options: up, down, release, build"
 
   def run(args) do
     case Mix.shell.cmd("docker-compose version", [quiet: true]) do
