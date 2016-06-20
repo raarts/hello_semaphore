@@ -12,11 +12,11 @@ defmodule Mix.Tasks.Compose do
   end
 
   def compose(["up"]) do
-    Mix.shell.cmd("sudo -E docker-compose up")
+    Mix.shell.cmd("sudo docker-compose up")
   end
 
   def compose(["down"]) do
-    Mix.shell.cmd("sudo -E docker-compose down")
+    Mix.shell.cmd("sudo docker-compose down")
   end
 
   def compose(["release", env]) do
