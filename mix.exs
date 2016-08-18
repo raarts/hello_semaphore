@@ -18,7 +18,7 @@ defmodule HelloSemaphore.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {HelloSemaphore, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
+     applications: [:phoenix, :phoenix_html, :phoenix_pubsub, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex]]
   end
 
@@ -30,14 +30,15 @@ defmodule HelloSemaphore.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.1.0"},
+    [{:phoenix, "~> 1.2.0"},
+     {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_ecto, "~> 2.0"},
      {:postgrex, ">= 0.0.0"},
-     {:phoenix_html, "~> 2.3"},
+     {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
-     {:exrm, "~> 1.0"}]
+     {:exrm, "~> 1.0.8"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
