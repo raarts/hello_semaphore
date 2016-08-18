@@ -13,7 +13,7 @@ defmodule HelloSemaphore do
       # Start the endpoint when the application starts
       supervisor(HelloSemaphore.Endpoint, []),
       # Start the Ecto repository
-      supervisor(HelloSemaphore.Repo, []),
+      worker(HelloSemaphore.Repo, []),
       # Here you could define other workers and supervisors as children
       # worker(HelloSemaphore.Worker, [arg1, arg2, arg3]),
     ]
