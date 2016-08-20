@@ -11,6 +11,6 @@ config :hello_semaphore, HelloSemaphore.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  hostname: "localhost",
+  hostname: "postgres",
   database: "hello_semaphore_prod",
   pool_size: 20
